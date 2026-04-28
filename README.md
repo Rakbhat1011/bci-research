@@ -12,7 +12,7 @@ Interface (BCI) systems using EEG signal processing and machine learning.
 
 ## Results
 
-### Experiment 1 — Hands vs Feet Imagery (Runs 6 & 10)
+### Experiment 1 - Hands vs Feet Imagery (Runs 6 & 10)
 | Subject | Accuracy |
 |---------|----------|
 | S1      | 76.7%    |
@@ -23,7 +23,7 @@ Interface (BCI) systems using EEG signal processing and machine learning.
 | **Mean**| **62.7%**|
 | Chance  | 50.0%    |
 
-### Experiment 2 — Left vs Right Hand Imagery (Runs 4 & 8)
+### Experiment 2 - Left vs Right Hand Imagery (Runs 4 & 8)
 | Subject | Accuracy |
 |---------|----------|
 | S1      | 66.7%    |
@@ -52,8 +52,8 @@ classifier is detecting real brain patterns.
 - motor_imagery_demo.py — full pipeline (download, preprocess, classify, plot)
 
 **Plots:**
-- motor_imagery_results.png — accuracy per subject + Mu power difference
-- motor_imagery_channels.png — top discriminative channels + per-channel power
+- motor_imagery_results.png - accuracy per subject + Mu power difference
+- motor_imagery_channels.png - top discriminative channels + per-channel power
 
 ---
 
