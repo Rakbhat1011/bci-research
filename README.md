@@ -1,4 +1,4 @@
-# BCI Research — EEG Analysis & Motor Imagery Classification
+# BCI Research : EEG Analysis & Motor Imagery Classification
 
 Interface (BCI) systems using EEG signal processing and machine learning.
 ---
