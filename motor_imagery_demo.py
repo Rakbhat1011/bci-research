@@ -63,6 +63,11 @@ for subject in SUBJECTS:
     ('scaler', StandardScaler()),
     ('lda', LDA())
         ])
+
+    # Option 2: SVM
+    # from sklearn.svm import SVC
+    # pipeline = Pipeline([('scaler', StandardScaler()), ('svm', SVC(kernel='rbf', C=1.0, random_state=42))])
+
     cv     = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     scores = cross_val_score(pipeline, X, y, cv=cv, scoring='accuracy')
 
