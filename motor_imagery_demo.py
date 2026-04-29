@@ -8,6 +8,7 @@ from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.pipeline import Pipeline
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 # ── Settings ─────────────────────────────────────
 SUBJECTS = [1, 2, 3, 4, 5]   # 5 subjects
@@ -59,9 +60,9 @@ for subject in SUBJECTS:
 
     # Cross validation
     pipeline = Pipeline([
-        ('scaler', StandardScaler()),
-        ('svm', SVC(kernel='rbf', C=1.0, random_state=42))
-    ])
+    ('scaler', StandardScaler()),
+    ('lda', LDA())
+        ])
     cv     = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     scores = cross_val_score(pipeline, X, y, cv=cv, scoring='accuracy')
 
@@ -107,8 +108,8 @@ axes[1].set_xlabel("Channel index")
 axes[1].set_ylabel("Power difference")
 
 plt.tight_layout()
-plt.savefig("motor_imagery_results.png", dpi=150)
-print("Saved: motor_imagery_results.png")
+plt.savefig("motor_imagery_results_LDA.png", dpi=150)  # Plot 1
+print("Saved: motor_imagery_results_LDA.png")
 
 # ── Plot 2: Channel importance bar chart ─────────
 fig2, axes2 = plt.subplots(1, 2, figsize=(14, 5))
@@ -133,6 +134,6 @@ axes2[1].set_ylabel("Power")
 axes2[1].legend()
 
 plt.tight_layout()
-plt.savefig("motor_imagery_channels.png", dpi=150)
-print("Saved: motor_imagery_channels.png")
+plt.savefig("motor_imagery_channels_LDA.png", dpi=150)  # Plot 2
+print("Saved: motor_imagery_channels_LDA.png")
 print("\nDone!")
